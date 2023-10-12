@@ -1,4 +1,5 @@
 <!-- Main Content -->
+
 <section class="container mx-auto my-8 bg-secondary p-6">
   <div class="rounded relative flex flex-col">
     <!-- Title and Uploader -->
@@ -11,7 +12,7 @@
     <!-- Video Editor -->
     <div class="relative">
       <!-- Video Player -->
-      <video controls class="video-js vjs-theme-forest mx-auto" data-setup="{}" (error)="handleVideoError()" id="clip">
+      <video controls class=" mx-auto" data-setup="{}" (error)="handleVideoError()" id="clip">
         <source [src]="videoSrc" type="video/mp4">
       </video>
 

@@ -4,10 +4,6 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { switchMap } from 'rxjs/operators'; // Import switchMap
 import IClip from '../models/clip.model';
-import videojs from 'video.js';
-
-import 'video.js/dist/video-js.css';
-
 
 @Component({
   selector: 'app-clip',
@@ -25,7 +21,7 @@ export class ClipComponent implements OnInit {
     private firestore: AngularFirestore
   ) {}
 
-  ngOnInit() {  this.initVideoPlayer();
+  ngOnInit() {
     this.route.params.pipe(
       switchMap(params => {
         this.clipId = params['id'];
@@ -48,16 +44,4 @@ export class ClipComponent implements OnInit {
     });
   }
   handleVideoError(){console.log('perrrorrrr')}
-  initVideoPlayer() {
-    // Initialize the video player with options
-    const player = videojs('clip', {
-      controls: true, // Show video controls
-      fluid: true, // Make the video player responsive
-      sources: [
-        {
-          src: this.videoSrc,
-          type: 'video/mp4', // Adjust this based on your video format
-        },
-      ],
-    });
-}}
+}

@@ -5,7 +5,7 @@ module.exports = {
     rules: [
       // Add a rule to handle CSS files
       {
-        test: /\.css$/,
+        test: /\.(css)$/,
         use: ['style-loader', 'css-loader'],
         exclude: /node_modules/
       },
